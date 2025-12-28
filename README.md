@@ -170,6 +170,10 @@ kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
 ```
 kubectl edit svc stable-grafana -n prometheus
 ```
+7. how to get grafana password
+```
+kubectl get secret --namespace prometheus stable-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
 
 ## Step 9: Deploy ArgoCD on EKS to fetch the manifest files to the cluster
 
